@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章总结 - 2026年数学建模美赛C题可视化</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#6366f1',
+                        accent: '#10b981',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                },
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .transition-all-300 {
+                transition: all 300ms ease-in-out;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-primary flex items-center">
+                    <i class="fa fa-line-chart mr-2"></i>
+                    MCM 数学建模
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary font-medium transition-all-300">首页</a>
+                    <a href="problem.html" class="text-gray-700 hover:text-primary font-medium transition-all-300">题目呈现</a>
+                    <a href="solution.html" class="text-gray-700 hover:text-primary font-medium transition-all-300">解题思路</a>
+                    <a href="paper.html" class="text-primary font-medium transition-all-300">文章总结</a>
+                    <a href="case.html" class="text-gray-700 hover:text-primary font-medium transition-all-300">典型案例</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <i class="fa fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- 移动端菜单 -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-2">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-primary font-medium">首页</a>
+                <a href="problem.html" class="block py-2 text-gray-700 hover:text-primary font-medium">题目呈现</a>
+                <a href="solution.html" class="block py-2 text-gray-700 hover:text-primary font-medium">解题思路</a>
+                <a href="paper.html" class="block py-2 text-primary font-medium">文章总结</a>
+                <a href="case.html" class="block py-2 text-gray-700 hover:text-primary font-medium">典型案例</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <header class="pt-24 pb-10 bg-white text-gray-900">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl md:text-4xl font-bold text-center text-shadow">2026年数学建模美赛C题可视化</h1>
+            <p class="text-center mt-4 opacity-90">优秀论文展示与总结</p>
+        </div>
+    </header>
+
+    <!-- 内容区域 -->
+    <main class="py-12">
+        <div class="container mx-auto px-4">
+            <!-- 论文介绍 -->
+            <section class="mb-12">
+                <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md p-8">
+                    <h2 class="text-2xl font-bold mb-4 text-dark">文章总结</h2>
+                    <p class="text-gray-700 mb-6">
+                        可视化贯穿MCM建模全流程，以规范图表清晰呈现数据特征、模型机理与结果对比，兼顾科学性与可读性，高效传递核心结论，显著提升论文说服力与完整度。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 论文列表 -->
+            <section class="mb-16">
+                <div class="max-w-4xl mx-auto">
+                    <!-- C题论文 -->
+                    <div class="bg-white rounded-xl shadow-md p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h2 class="text-2xl font-bold text-dark">数据可视化挑战</h2>
+                                <p class="text-gray-600 mt-2">MCM 2026 优秀论文</p>
+                            </div>
+                            <div class="bg-primary text-white font-medium py-2 px-4 rounded-lg">
+                                C题
+                            </div>
+                        </div>
+                        
+                        <h3 class="font-bold text-lg mb-3 text-gray-800">摘要</h3>
+                        <p class="text-gray-700 mb-6">
+                            本文针对2026年MCM竞赛C题的数据可视化挑战，提出了一种综合的数据分析与可视化方案。通过对数据集的深入分析，我们设计了多种交互式可视化图表，包括数据分布特征展示、趋势分析、多维度数据关联分析和异常检测。基于可视化结果，我们识别了数据中的关键模式和趋势，为决策提供了数据驱动的建议。
+                        </p>
+
+                        <h3 class="font-bold text-lg mb-3 text-gray-800">论文结构</h3>
+                        <ol class="list-decimal list-inside space-y-2 text-gray-700 mb-6">
+                            <li>问题重述与分析</li>
+                            <li>数据预处理与特征提取</li>
+                            <li>可视化需求分析</li>
+                            <li>可视化方法选择与设计</li>
+                            <li>交互式可视化实现</li>
+                            <li>结果分析与发现</li>
+                            <li>结论与建议</li>
+                        </ol>
+
+                        <!--<div class="flex justify-end">
+                            <a href="#" class="bg-primary text-white font-medium py-2 px-4 rounded-lg hover:bg-blue-600 transition-all-300 flex items-center">
+                                <i class="fa fa-download mr-2"></i>
+                                下载论文
+                            </a>
+                        </div>-->
+                    </div>
+                </div>
+            </section>
+
+            <!-- 论文撰写指南 -->
+            <section>
+                <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md p-8">
+                    <h2 class="text-2xl font-bold mb-4 text-dark">论文撰写指南</h2>
+                    <p class="text-gray-700 mb-6">
+                        撰写一篇优秀的MCM C题论文需要注意以下几点：
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 rounded-lg p-6">
+                            <h3 class="font-bold text-lg mb-3 text-primary">数据处理与分析</h3>
+                            <p class="text-gray-600">
+                                详细描述数据预处理步骤，包括缺失值处理、异常值检测和特征提取。分析数据的分布特征和内在关系，为可视化设计提供依据。
+                            </p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6">
+                            <h3 class="font-bold text-lg mb-3 text-secondary">可视化设计</h3>
+                            <p class="text-gray-600">
+                                选择合适的可视化方法，根据数据类型和分析目标设计有效的图表。考虑图表的美观性和信息传达效果，确保可视化结果清晰易懂。
+                            </p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6">
+                            <h3 class="font-bold text-lg mb-3 text-accent">交互功能</h3>
+                            <p class="text-gray-600">
+                                实现交互式可视化功能，如数据筛选、缩放、悬停等，增强用户体验和数据分析能力。确保交互操作流畅，响应及时。
+                            </p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6">
+                            <h3 class="font-bold text-lg mb-3 text-yellow-600">结果分析</h3>
+                            <p class="text-gray-600">
+                                基于可视化结果进行深入分析，识别数据中的模式、趋势和异常。提供数据驱动的决策建议，展示可视化的实际应用价值。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white py-8 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold text-white mb-2">2026年数学建模美赛C题可视化</h3>
+                    <p class="text-gray-400">探索数据可视化的魅力</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="index.html" class="text-gray-400 hover:text-white transition-all-300">首页</a>
+                    <a href="problem.html" class="text-gray-400 hover:text-white transition-all-300">题目呈现</a>
+                    <a href="solution.html" class="text-gray-400 hover:text-white transition-all-300">解题思路</a>
+                    <a href="paper.html" class="text-gray-400 hover:text-white transition-all-300">文章总结</a>
+                    <a href="case.html" class="text-gray-400 hover:text-white transition-all-300">典型案例</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-6 text-center text-gray-400">
+                
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCM Mathematical Contest</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#a78bfa',
+                        secondary: '#6366f1',
+                        accent: '#10b981',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                },
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .transition-all-300 {
+                transition: all 300ms ease-in-out;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans relative" style="background-image: url('background.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <!-- 半透明覆盖层 -->
+    <div class="absolute inset-0 bg-white opacity-70 z-0"></div>
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-primary flex items-center">
+                    <i class="fa fa-line-chart mr-2"></i>
+                    MCM Mathematical Contest
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-primary font-medium transition-all-300">Home</a>
+                    <a href="problem.html" class="text-gray-700 hover:text-primary font-medium transition-all-300">Problems</a>
+                    <a href="solution.html" class="text-gray-700 hover:text-primary font-medium transition-all-300">Solutions</a>
+                    <a href="paper.html" class="text-gray-700 hover:text-primary font-medium transition-all-300">Papers</a>
+                    <a href="case.html" class="text-gray-700 hover:text-primary font-medium transition-all-300">Cases</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <i class="fa fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- 移动端菜单 -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-2">
+                <a href="index.html" class="block py-2 text-primary font-medium">Home</a>
+                <a href="problem.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Problems</a>
+                <a href="solution.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Solutions</a>
+                <a href="paper.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Papers</a>
+                <a href="case.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Cases</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <header class="pt-24 pb-16 bg-white text-gray-900 relative z-10">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 text-shadow">2026 MCM Problem C Visualization</h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90">Explore the charm of mathematical modeling, share problem-solving skills and experiences</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="problem.html" class="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-all-300">
+                        View Problems
+                    </a>
+                    <a href="solution.html" class="bg-transparent border-2 border-primary text-primary font-bold py-3 px-6 rounded-lg hover:bg-primary hover:text-white transition-all-300">
+                        Solutions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 内容区域 -->
+    <main class="py-12 relative z-10">
+        <div class="container mx-auto px-4">
+            <!-- 网站介绍 -->
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold text-center mb-8 text-dark">About MCM</h2>
+                <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md p-8">
+                    <p class="text-gray-700 mb-4">
+                        MCM (Mathematical Contest in Modeling) is an international mathematical modeling competition that encourages students to use mathematical methods to solve real-world problems. Teams are required to complete modeling, solving, and paper writing for a real problem within a specified time.
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        This website aims to provide visualization-related materials for the 2026 MCM Contest Problem C, including problem presentation, solution approaches, paper summaries, and typical cases, to help everyone better prepare for and participate in the competition.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8">
+                        <a href="problem.html" class="bg-blue-50 rounded-lg p-6 text-center hover:shadow-md transition-all-300">
+                            <div class="text-primary text-4xl mb-4">
+                                <i class="fa fa-file-text-o"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">Problems</h3>
+                            <p class="text-gray-600 text-sm">View specific problem requirements for the MCM Contest</p>
+                        </a>
+                        <a href="solution.html" class="bg-indigo-50 rounded-lg p-6 text-center hover:shadow-md transition-all-300">
+                            <div class="text-secondary text-4xl mb-4">
+                                <i class="fa fa-lightbulb-o"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">Solutions</h3>
+                            <p class="text-gray-600 text-sm">Learn how to analyze and solve visualization problems in the contest</p>
+                        </a>
+                        <a href="paper.html" class="bg-green-50 rounded-lg p-6 text-center hover:shadow-md transition-all-300">
+                            <div class="text-accent text-4xl mb-4">
+                                <i class="fa fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">Papers</h3>
+                            <p class="text-gray-600 text-sm">Refer to the structure and content of excellent papers</p>
+                        </a>
+                        <a href="case.html" class="bg-yellow-50 rounded-lg p-6 text-center hover:shadow-md transition-all-300">
+                            <div class="text-yellow-500 text-4xl mb-4">
+                                <i class="fa fa-book"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">Cases</h3>
+                            <p class="text-gray-600 text-sm">Understand solutions to classic visualization problems</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- 联系方式 -->
+            <section>
+                <h2 class="text-3xl font-bold text-center mb-8 text-dark">Contact</h2>
+                <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-md p-8 text-center">
+                    <p class="text-gray-700 mb-4">If you have any suggestions or questions about this website, please feel free to contact us.</p>
+                    <div class="flex justify-center space-x-6">
+                        <a href="#" class="text-gray-600 hover:text-primary text-2xl transition-all-300">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-primary text-2xl transition-all-300">
+                            <i class="fa fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-primary text-2xl transition-all-300">
+                            <i class="fa fa-weixin"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-8 relative z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold mb-2">MCM Mathematical Contest</h3>
+                    <p class="text-gray-400">Explore the charm of mathematical modeling</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="index.html" class="text-gray-400 hover:text-white transition-all-300">Home</a>
+                    <a href="problem.html" class="text-gray-400 hover:text-white transition-all-300">Problems</a>
+                    <a href="solution.html" class="text-gray-400 hover:text-white transition-all-300">Solutions</a>
+                    <a href="paper.html" class="text-gray-400 hover:text-white transition-all-300">Papers</a>
+                    <a href="case.html" class="text-gray-400 hover:text-white transition-all-300">Cases</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-6 text-center text-gray-400">
+                
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
