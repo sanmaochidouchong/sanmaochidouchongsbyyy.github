@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>典型案例 - MCM 数学建模竞赛</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#6366f1',
+                        accent: '#10b981',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                },
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .transition-all-300 {
+                transition: all 300ms ease-in-out;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-primary flex items-center">
+                    <i class="fa fa-line-chart mr-2"></i>
+                    MCM Mathematical Contest
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary font-medium transition-all-300">Home</a>
+                    <a href="problem.html" class="text-gray-700 hover:text-primary font-medium transition-all-300">Problems</a>
+                    <a href="solution.html" class="text-gray-700 hover:text-primary font-medium transition-all-300">Solutions</a>
+                    <a href="paper.html" class="text-gray-700 hover:text-primary font-medium transition-all-300">Papers</a>
+                    <a href="case.html" class="text-primary font-medium transition-all-300">Cases</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <i class="fa fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- 移动端菜单 -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-2">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Home</a>
+                <a href="problem.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Problems</a>
+                <a href="solution.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Solutions</a>
+                <a href="paper.html" class="block py-2 text-gray-700 hover:text-primary font-medium">Papers</a>
+                <a href="case.html" class="block py-2 text-primary font-medium">Cases</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <header class="pt-24 pb-16 bg-white text-gray-900 relative z-10">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 text-shadow">Cases</h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90">Explore classic cases of mathematical modeling, learn methods and techniques for problem-solving</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="problem.html" class="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-all-300">
+                        View Problems
+                    </a>
+                    <a href="solution.html" class="bg-transparent border-2 border-primary text-primary font-bold py-3 px-6 rounded-lg hover:bg-primary hover:text-white transition-all-300">
+                        Solutions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 内容区域 -->
+    <main class="py-12">
+        <div class="container mx-auto px-4">
+            <!-- 案例介绍 -->
+            <section class="mb-12">
+                <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md p-8">
+                    <h2 class="text-2xl font-bold mb-4 text-dark">典型案例展示</h2>
+                    <p class="text-gray-700 mb-6">
+                        以下是MCM竞赛中c题可视化中的图片优化案例。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 案例列表 -->
+            <section class="mb-16">
+                <div class="max-w-4xl mx-auto">
+                    <!-- 案例1 -->
+                    <div class="bg-white rounded-xl shadow-md p-8 mb-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h2 class="text-2xl font-bold text-dark">模型预测一致性与确定性的视觉表征</h2>
+                                <!--<p class="text-gray-600 mt-2">模型预测一致性与确定性的视觉表征</p>-->
+                            </div>
+                            <div class="bg-primary text-white font-medium py-2 px-4 rounded-lg">
+                                问题一
+                            </div>
+                        </div>
+                        
+                        <h3 class="font-bold text-lg mb-3 text-gray-800">解题思路简述</h3>
+                        <p class="text-gray-700 mb-6">
+                            任务一的核心在于推算不可观测的粉丝投票Vi,t。本方案采用带罚函数的约束优化算法，将实际淘汰序列作为模型约束。同时，引入蒙特卡洛模拟对估计过程进行多次扰动，以计算预测结果的置信区间与确定性水平。
+                        </p>
+
+                        <h3 class="font-bold text-lg mb-3 text-gray-800">任务一 (EPA 一致性分析) 优化前后对比</h3>
+                        <img src="微信图片_20260403114340.png" alt="优化前" class="mb-6">
+                        <img src="微信图片_20260403114349.png" alt="优化后" class="mb-6">
+
+                        <h3 class="font-bold text-lg mb-3 text-gray-800">关键技术</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                            <li>引入浅蓝色填充区域定义置信区间（CI）使离群点在视觉上自动浮现</li>
+                            <li>采用色彩加尺寸双重编码。大绿点表示高准确率，黄蓝点区分波动与常态</li>
+                            <li>加粗红色均值虚线，并在图例中直接标注数值，增强模型性能的直观说服力</li>
+                            <!--<li>参数敏感性分析</li>-->
+                        </ul>
+                    </div>
+
+                    <!-- 案例2 -->
+                    <div class="bg-white rounded-xl shadow-md p-8 mb-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h2 class="text-2xl font-bold text-dark">计分机制灵敏度的直观呈现与漏洞识别</h2>
+                                <!--<p class="text-gray-600 mt-2">计分机制灵敏度的直观呈现与漏洞识别</p>-->
+                            </div>
+                            <div class="bg-secondary text-white font-medium py-2 px-4 rounded-lg">
+                                问题二
+                            </div>
+                        </div>
+                        
+                        <h3 class="font-bold text-lg mb-3 text-gray-800">解题思路简述</h3>
+                        <p class="text-gray-700 mb-6">
+                            本任务对比“排名制”与“百分比制”的抗干扰能力。通过引入“观众影响力系数” γ 并进行灵敏度扰动分析，模拟不同计分权重下选手排名的波动轨迹，从而定位导致赛制争议的数学漏洞。
+                        </p>
+
+                        <h3 class="font-bold text-lg mb-3 text-gray-800">确定性指数（CI）可视化方案的迭代与效能改进</h3>
+                        <img src="微信图片_20260403110215.png" alt="优化前" class="mb-6">
+                        <img src="微信图片_20260403110231.png" alt="优化后" class="mb-6">
+
+                        <h3 class="font-bold text-lg mb-3 text-gray-800">关键技术</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                            <li>引入了双色向冷暖色调（Diverging Palette）。高确定性（蓝色）与低确定性（橙红）形成鲜明视觉对比，大幅提升了异质性分析的辨识度。</li>
+                            <li>通过红框实线与黑框虚线对选手群体进行分类。红框锁定“高人气稳健型”选手，黑框精准定位“已淘汰”异常值（CI=0），实现了数据的自动化分层展示。</li>
+                            <li>增加了带有引导箭头的文本标注。明确指出了第10-11周 CI 锐减的业务逻辑（竞争加剧），将枯燥的预测指数转化为了可解释的比赛洞察。</li>
+                            <li>将“淘汰选手”赋予极致的深红色，使其在冷色调背景中显著浮现，强化了异常数据点的存在感。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 案例3 -->
+                    <div class="bg-white rounded-xl shadow-md p-8 mb-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h2 class="text-2xl font-bold text-dark">非线性特征影响的具象化解构</h2>
+                                <!--<p class="text-gray-600 mt-2">非线性特征影响的具象化解构</p>-->
+                            </div>
+                            <div class="bg-accent text-white font-medium py-2 px-4 rounded-lg">
+                                问题三
+                            </div>
+                        </div>
+                        
+                        <h3 class="font-bold text-lg mb-3 text-gray-800">解题思路简述</h3>
+                        <p class="text-gray-700 mb-6">
+                            应用正则化非线性混合效应模型（RNLMM）挖掘选手背景对胜率的贡献。模型提取了年龄、职业等关键特征，并重点捕捉这些特征如何随比赛进程产生非线性的影响力衰减。
+                        </p>
+
+                        <h3 class="font-bold text-lg mb-3 text-gray-800">选手背景特征对胜率的非线性影响趋势图 的放置逻辑说明</h3>
+                        <img src="微信图片_20260403151118.png" alt="优化前" class="mb-6">
+                        <img src="微信图片_20260403151137.png" alt="优化后" class="mb-6">
+
+                        <h3 class="font-bold text-lg mb-3 text-gray-800">关键技术</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                            <li>利用 fill_betweenx 划分红蓝双色背景，直观界定“安全区”与“惩罚监控区”，强化了模型的物理边界感。</li>
+                            <li>在散点基础上通过循环自动注入选手姓名及 (D, phi) 坐标，使抽象的数学验证具备了真实的案例实证支撑。</li>
+                            <li>加粗主曲线、注入 LaTeX 核心公式并强化阈值线 theta，显著提升了图表的学术叙事精度与专业感。</li>
+                            <!--<li>敏感性分析</li>-->
+                        </ul>
+                    </div>
+
+                    <!-- 案例4 -->
+                    <div class="bg-white rounded-xl shadow-md p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h2 class="text-2xl font-bold text-dark">新机制公平性与鲁棒性的对比验证</h2>
+                                <!--<p class="text-gray-600 mt-2">新机制公平性与鲁棒性的对比验证</p>-->
+                            </div>
+                            <div class="bg-yellow-600 text-white font-medium py-2 px-4 rounded-lg">
+                                问题四
+                            </div>
+                        </div>
+                        
+                        <h3 class="font-bold text-lg mb-3 text-gray-800">解题思路简述</h3>
+                        <p class="text-gray-700 mb-6">
+                            针对现有漏洞设计了“动态偏差惩罚机制”。引入基于 Sigmoid 函数的调节权重，当人气分严重挤占技术分空间时自动触发惩罚，以保护高水平选手的公平晋级机会。
+                        </p>
+
+                        <h3 class="font-bold text-lg mb-3 text-gray-800">公平性调整后的分布稳健性与鲁棒性检验图 的应用价值说明</h3>
+                        <img src="Figure_11.png" alt="优化前" class="mb-6">
+                        <img src="Figure11_BluePink_Style.png" alt="优化后" class="mb-6">
+
+                        <h3 class="font-bold text-lg mb-3 text-gray-800">关键技术</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                            <li> 强化低 RMSE 核心区域，弱化高 RMSE 边缘区，让最优区间一目了然。</li>
+                            <li>优化坐标轴刻度与字体，规整 k、θ 轴范围与间距</li>
+                            <li>清晰标注横纵坐标含义、最优解数值，信息完整无歧义</li>
+                            <li>从 “散乱数值点展示” 升级为 “曲面解读逻辑”：先看最优解，再看低 RMSE 稳定区，最后看高敏感区，完全符合数理建模论文的论证逻辑。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 案例分析 -->
+            <section>
+                <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md p-8">
+                    <h2 class="text-2xl font-bold mb-4 text-dark">案例分析</h2>
+                    <p class="text-gray-700 mb-6">
+                        通过分析以上典型案例，我们可以总结出以下几点数据可视化的关键要素：
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 rounded-lg p-6">
+                            <h3 class="font-bold text-lg mb-3 text-primary">数据理解与预处理</h3>
+                            <p class="text-gray-600">
+                                充分理解数据结构和特征，进行数据清洗、转换和预处理，为可视化做好准备。
+                            </p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6">
+                            <h3 class="font-bold text-lg mb-3 text-secondary">可视化方法选择</h3>
+                            <p class="text-gray-600">
+                                根据数据类型和分析目标选择合适的可视化方法，如散点图、箱线图、热力图等。
+                            </p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6">
+                            <h3 class="font-bold text-lg mb-3 text-accent">交互功能设计</h3>
+                            <p class="text-gray-600">
+                                设计合理的交互功能，如缩放、筛选、悬停提示等，提升用户体验和分析效率。
+                            </p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6">
+                            <h3 class="font-bold text-lg mb-3 text-yellow-600">结果解读与优化</h3>
+                            <p class="text-gray-600">
+                                分析可视化结果，提取有价值的洞察，不断优化可视化方案，提高数据传达的有效性。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-white text-gray-900 py-8 relative z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold mb-2">MCM Mathematical Contest</h3>
+                    <p class="text-gray-400">Exploring the charm of mathematical modeling</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="index.html" class="text-gray-400 hover:text-white transition-all-300">Home</a>
+                    <a href="problem.html" class="text-gray-400 hover:text-white transition-all-300">Problems</a>
+                    <a href="solution.html" class="text-gray-400 hover:text-white transition-all-300">Solutions</a>
+                    <a href="paper.html" class="text-gray-400 hover:text-white transition-all-300">Papers</a>
+                    <a href="case.html" class="text-gray-400 hover:text-white transition-all-300">Cases</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-6 text-center text-gray-400">
+                
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
